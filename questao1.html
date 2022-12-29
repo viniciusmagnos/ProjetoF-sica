@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="questao1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+    <title>Questao 1</title>
+</head>
+<body>
+    <div id="A">
+        <div class="container" id="quiz">
+            <h3 class="etapa">Etapa: Identificação</h3>
+            <div id="chuteImg">
+                <img src="Chute.PNG" width="800px">
+            </div>
+            <h2 id="enunciado"> Um futebolista chuta uma bola com \(10~m/s\) de velocidade (módulo) e fazendo um ângulo \(\theta\) com a horizontal. Como mostra o vídeo abaixo:</h2>
+            <div id="chuteVideo">
+                <img src="Chute.gif" width="800px">
+            </div>
+            <p id="perguntas">
+                <b>a)</b> Se \(\theta=35^{\circ}\) determine o alcance horizontal. <br>
+                <b>b)</b> Se a bola percorre \(7,\!817m\) na horizontal, determine o valor do ângulo \(\theta\). <br>
+                <b>c)</b> Se a bola bate na trave superior do arco do gol, determine o valor do ângulo \(\theta\).
+            </p>
+            <div class="centered" id="introducao">
+                <h2>Vamos começar pela primeira pergunta:</h2>
+                <p><b>a)</b> Se \(\theta=35^{\circ}\) determine o alcance horizontal.</p>
+                <h2>Será usada as seguintes etapas para resolução do problema:</h2>
+                <p>1 - Identificação</p>
+                <p>2 - Preparação</p>
+                <p>3 - Execução</p>
+            </div>
+            <div id="questoes">
+                <div class="choice-container">
+                    <p class="choice-prefix"><b>a)</b></p>
+                    <p class="choice-text" data-number="1">Choice</p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-prefix"><b>b)</b></p>
+                    <p class="choice-text" data-number="2">Choice 2</p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-prefix"><b>c)</b></p>
+                    <p class="choice-text" data-number="3">Choice 3</p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-prefix"><b>d)</b></p>
+                    <p class="choice-text" data-number="4">Choice 4</p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-prefix"><b>e)</b></p>
+                    <p class="choice-text" data-number="5">Choice 5</p>
+                </div>
+                <div>
+                    <h4 id="comentario"></h4>
+                </div>
+                <div class="centered" id="contBtnQuiz">
+                    <button class="btn" id="btnQuiz">Avançar</button>
+                </div>
+            </div>
+            <div class="centered" id="btnInicial">
+                <button class="btn" onclick="abrirIntroducao()">Vamos Resolver</button>
+            </div>
+        </div>
+        <div class="centered container" id="explicacao">
+            <h3 class="etapa">Etapa: Identificação</h3>
+            <h2> O movimento da bola é parabólico, e acontece em duas dimensões, onde a posição, 
+                velocidade e aceleração se expressam através de vetores
+            </h2>
+            <h3> \(\vec{r}=x\hat{i}+y\hat{j}\) </h3>
+            <h3> \(\vec{v}=v_x\hat{i}+v_y\hat{j}\) </h3>
+            <h3> \(\vec{a}=a_x\hat{i}+a_y\hat{j}\) </h3>
+            <div>
+                <button class='btn' onclick="comecarQuestoes()">Avançar</button>
+            </div>
+        </div>
+        <div class="container" id="containerVF">
+            <h3 class="etapa">Etapa: Identificação</h3>
+            <h2 id="enunciadoVF">Enunciado</h2>
+            <select class="opcaoVF" data-number="1">
+              <option value="Vazio"></option>
+              <option value="V">V</option>
+              <option value="F">F</option>
+            </select>
+            <span class="afirm">Os movimentos em \(x\) e \(y\) não podem ser considerados independentes</span>
+            <br>
+            <span class="resposta"></span>
+            <br>
+            <select class="opcaoVF" data-number="2">
+                <option value="Vazio"></option>
+                <option value="V">V</option>
+                <option value="F">F</option>
+              </select>
+              <span class="afirm">Em \(x\) o movimento possui \(v_x\) constante</span>
+              <br>
+              <span class="resposta"></span>
+              <br>
+            <select class="opcaoVF" data-number="3">
+                <option value="Vazio"></option>
+                <option value="V">V</option>
+                <option value="F">F</option>
+            </select>
+              <span class="afirm">Em \(y\) o movimento possui \(a_y\) variável</span>
+              <br>
+              <span class="resposta"></span>
+            <br>
+            <select class="opcaoVF" data-number="4">
+                <option value="Vazio"></option>
+                <option value="V">V</option>
+                <option value="F">F</option>
+            </select>
+            <span class="afirm">A velocidade é uma grandeza escalar que pode ser positiva ou negativa</span>
+            <br>
+            <span class="resposta"></span>
+            <br>
+            <div class="centered">
+                <button class='btn' id='btnVF'>Corrigir</button>
+            </div>
+        </div>
+        <div class="container" id="containerRelac">
+            <h3 class="etapa">Etapa: Preparação</h3>
+            <div class="centered">
+                <img src="componVel.PNG" alt="Componentes da Velocidade" width="300px">
+            </div>
+            <h2>4 - Com base na figura, relacione de forma correta:</h2>
+            <div class="container flex">
+                <div class="flex-column">
+                    <p><b>a)</b> \(v \cos\theta\)</p>
+                    <p><b>b)</b> \(v \sin\theta\)</p>
+                    <p><b>c)</b> \(v \tg\theta\)</p>  
+                </div>
+                <div class="flex-column colunaSelec">
+                    <div class="margRelac">
+                        <select class="opcaoRelac" data-number="1">
+                            <option value="Vazio"></option>
+                            <option value="a">a</option>
+                            <option value="b">b</option>
+                            <option value="c">c</option>
+                        </select>
+                        <span>\(v_y\)</span>
+                        <span class="comentRelac"></span>
+                    </div>
+                    <div class="margRelac">
+                        <select class="opcaoRelac" data-number="2">
+                            <option value="Vazio"></option>
+                            <option value="a">a</option>
+                            <option value="b">b</option>
+                            <option value="c">c</option>
+                        </select>
+                        <span>\(v_x\)</span>
+                        <span class="comentRelac"></span>
+                    </div>
+                </div>
+            </div>     
+            <div class="centered">
+                <button class='btn' id='btnRelac'>Corrigir</button>
+            </div>
+        </div>
+        <div class="container flex" id="QR">
+            <div class="container flex-column">
+                <div class="questoesR">
+                    <h3 class="etapa">Etapa: Preparação</h3>
+                    <div>
+                        <h2>5 - Com as equações ja obtidas, encontre os valores de \(v_{0x}\) e \(v_{0y}\).</h2>
+                    </div>
+                    <div class="flex">
+                        <div class="flex_column">
+                            <span>\(v_{0x} = \)</span>
+                            <select class="opcoesCinco" data-number="1">
+                                <option value="Vazio"></option>
+                                <option value="a">7,071 m/s</option>
+                                <option value="b">5,736 m/s</option>
+                                <option value="c">10 m/s</option>
+                                <option value="d">9,81 m/s</option>
+                                <option value="e">8,192 m/s</option>
+                                <option value="f">8,665 m/s</option>
+                                <option value="g">5 m/s</option>                                
+                            </select>
+                            <br>
+                            <span class="comentCinco"></span>
+                        </div>
+                        <div class="flex_column">
+                            <span>\(v_{0y} = \)</span>
+                            <select class="opcoesCinco" data-number="2">
+                                <option value="Vazio"></option>
+                                <option value="a">7,071 m/s</option>
+                                <option value="b">5,736 m/s</option>
+                                <option value="c">10 m/s</option>
+                                <option value="d">9,81 m/s</option>
+                                <option value="e">8,192 m/s</option>
+                                <option value="f">8,665 m/s</option>
+                                <option value="g">5 m/s</option>                                
+                            </select>
+                            <br>
+                            <span class="comentCinco"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="questoesR">
+                    <h3 class="etapa">Etapa: Preparação</h3>
+                    <div>
+                        <h2>6 - Relacione as direções x e y com os seus respectivos quadros de equações:</h2>
+                    </div>
+                    <div class="flex">
+                        <div class="flex-column">
+                            <div class="quadro">
+                                <h3>Letra a)</h3>
+                                <p>\(v = v_0\)</p>
+                                <p>\(S - S_0 = v_0   t\)</p>
+                            </div>
+                        </div>
+                        <div class="flex-column">
+                            <div class="quadro">
+                                <h3>Letra b)</h3>
+                                <p>\(v = v_0 + a   t\)</p>
+                                <p>\(S = S_0 + v_0   t + a   \frac{t^2}{2}\)</p>
+                                <p>\(v^2 = v_0^2 + 2a(S-S_0)\)</p>
+                                <p>\(S = S_0 + \frac{1}{2}(v_0 + v)t\)</p>
+                                <p>\(S = S_0 + v   t - a   \frac{t^2}{2}\)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex">
+                        <div class="flex_column">
+                            <select class="opcoesSeis" data-number="1">
+                                <option value="Vazio"></option>
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                            </select>
+                            <span>\(x\) (Horizontal)</span>
+                            <br>
+                            <span class="comentSeis"></span>
+                        </div>
+                        <div class="flex_column">
+                            <select class="opcoesSeis" data-number="2">
+                                <option value="Vazio"></option>
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                            </select>
+                            <span>\(y\) (Vertical)</span>
+                            <br>
+                            <span class="comentSeis"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="questoesR">
+                    <h3 class="etapa">Etapa: Execução</h3>
+                    <div class="centered">
+                        <img src="num7.png" alt="" width="500px">
+                    </div>
+                    <div>
+                        <h2>7 - Usando as equações do eixo x, qual será o valor de \(\Delta x\) representado na imagem acima:</h2>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix"><b>a)</b></p>
+                        <p class="choices2" data-number="1">\(9,81~m/s^2\)</p>
+                    </div>
+                        <div class="choice-container">
+                        <p class="choice-prefix"><b>b)</b></p>
+                        <p class="choices2" data-number="2">\(5~m\)</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix"><b>c)</b></p>
+                        <p class="choices2" data-number="3">\(8,192t\)</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix"><b>d)</b></p>
+                        <p class="choices2" data-number="4">\(9,81t\)</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix"><b>e)</b></p>
+                        <p class="choices2" data-number="5">\(5t\)</p>
+                    </div>
+                    <div>
+                        <h4 class="comentario2"></h4>
+                    </div>
+                </div>
+                <div class="questoesR">
+                    <h3 class="etapa">Etapa: Execução</h3>
+                    <div class="centered">
+                        <img src="chuteEixos.png" alt="" width="500px">
+                    </div>
+                    <div>
+                        <h2>8 - Na vertical temos as seguintes equações:</h2>
+                    </div>
+                    <div>
+                        <p>\(1)~~~~~~v_y = v_{0y} - g   t\)</p>
+                        <p>\(2)~~~~~~y = y_0 + v_{0y}   t - g   \frac{t^2}{2}\)</p>
+                        <p>\(3)~~~~~~v_y^2 = v_{0y}^2 - 2g(y-y_0)\)</p>
+                        <p>\(4)~~~~~~y = y_0 + \frac{1}{2}(v_{0y} + v_y)t\)</p>
+                        <p>\(5)~~~~~~y = y_0 + v_y   t + g   \frac{t^2}{2}\)</p>
+                    </div>
+                    <div class="centered">
+                        <h3>Qual usaremos para encontrar o valor de \(t\) que está faltando?</h3>
+                        <select class="opcoesOito" data-number="1">
+                            <option value="Vazio"></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <span class="comentOito"></span>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+                <div class="questoesR">
+                    <h3 class="etapa">Etapa: Execução</h3>
+                    <div class="centered">
+                        <img src="chuteEixos.png" alt="" width="500px">
+                    </div>
+                    <div>
+                        <h2>9 - Usando a equação escolhida, calcule o intervalo de tempo que o objeto permaneceu em movimento</h2>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix"><b>a)</b></p>
+                        <p class="choices2" data-number="1">\(2~s\)</p>
+                    </div>
+                        <div class="choice-container">
+                        <p class="choice-prefix"><b>b)</b></p>
+                        <p class="choices2" data-number="2">\(0,854~s\)</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix"><b>c)</b></p>
+                        <p class="choices2" data-number="3">\(3,274~s\)</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix"><b>d)</b></p>
+                        <p class="choices2" data-number="4">\(9,81~s\)</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix"><b>e)</b></p>
+                        <p class="choices2" data-number="5">\(1,171~s\)</p>
+                    </div>
+                    <div>
+                        <h4 class="comentario2"></h4>
+                    </div>
+                </div>
+                <div class="questoesR">
+                    <h3 class="etapa">Etapa: Execução</h3>
+                    <div class="centered">
+                        <img src="num7.png" alt="" width="500px">
+                    </div>
+                    <div>
+                        <h2>10 - Qual é o alcance horizontal da bola?</h2>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix"><b>a)</b></p>
+                        <p class="choices2" data-number="1">\(9,593~m\)</p>
+                    </div>
+                        <div class="choice-container">
+                        <p class="choice-prefix"><b>b)</b></p>
+                        <p class="choices2" data-number="2">\(5~m\)</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix"><b>c)</b></p>
+                        <p class="choices2" data-number="3">\(6,717~m\)</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix"><b>d)</b></p>
+                        <p class="choices2" data-number="4">\(9,81~m\)</p>
+                    </div>
+                    <div class="choice-container">
+                        <p class="choice-prefix"><b>e)</b></p>
+                        <p class="choices2" data-number="5">\(10~m\)</p>
+                    </div>
+                    <div>
+                        <h4 class="comentario2"></h4>
+                    </div>
+                </div>
+                <div class="centered" id="contBtnQR">
+                    <button class='btn' id='btnQR'>Corrigir</button>
+                </div>
+            </div>
+                <div class="flex-column" id="quadroResultados">
+                    <div>
+                        <h2>Resultados:</h2>
+                        <div class="resultados">
+                            <h4>Dados iniciais</h4>
+                            <p>\(v_0 = 10~m/s\)</p>
+                            <p>\(\theta = 35\degree\)</p>
+                            <h4>Componentes da velocidade</h4>
+                            <p>\(v_{0x} = v_0 \cos\theta\)</p>
+                            <p>\(v_{0y} = v_0 \sin\theta\)</p>
+                        </div>
+                        <div class="resultados">
+                            <h4>Componentes da velocidade</h4>
+                            <p>\(v_{0x} = 8,192~m/s\)</p>
+                            <p>\(v_{0y} = 5,736~m/s\)</p>
+                        </div>
+                        <div class="resultados">
+                            <h4>Componentes da velocidade</h4>
+                            <p>\(v_{0x} = 8,192~m/s\)</p>
+                            <p>\(v_{0y} = 5,736~m/s\)</p>
+                            <h4>Equações em x</h4>
+                            <p>\(v_x = v_{0x}\)</p>
+                            <p>\(x - x_0 = v_{0x}t\)</p>
+                            <h4>Equações em y</h4>
+                            <p>\(v_y = v_{0y} - g   t\)</p>
+                            <p>\(y = y_0 + v_{0y}   t - g   \frac{t^2}{2}\)</p>
+                            <p>\(v_y^2 = v_{0y}^2 - 2g(y-y_0)\)</p>
+                            <p>\(y = y_0 + \frac{1}{2}(v_{0y} + v_y)t\)</p>
+                            <p>\(y = y_0 + v_y   t + g   \frac{t^2}{2}\)</p>
+                        </div>
+                        <div class="resultados">
+                            <h4>Componentes da velocidade</h4>
+                            <p>\(v_x = 8,192~m/s\)</p>
+                            <p>\(v_{0y} = 5,736~m/s\)</p>
+                            <h4>Resultado em x</h4>
+                            <p>\(\Delta x = 8,192t\)</p>
+                            <h4>Equações em y</h4>
+                            <p>\(v_y = v_{0y} - g   t\)</p>
+                            <p>\(y = y_0 + v_{0y}   t - g   \frac{t^2}{2}\)</p>
+                            <p>\(v_y^2 = v_{0y}^2 - 2g(y-y_0)\)</p>
+                            <p>\(y = y_0 + \frac{1}{2}(v_{0y} + v_y)t\)</p>
+                            <p>\(y = y_0 + v_y   t + g   \frac{t^2}{2}\)</p>
+                        </div>
+                        <div class="resultados">
+                            <h4>Componentes da velocidade</h4>
+                            <p>\(v_x = 8,192~m/s\)</p>
+                            <p>\(v_{0y} = 5,736~m/s\)</p>
+                            <h4>Resultado em x</h4>
+                            <p>\(\Delta x = 8,192t\)</p>
+                            <h4>Equação em y</h4>
+                            <p>\(y = y_0 + v_{0y}t - g \frac{t^2}{2}\)</p>
+                        </div>
+                        <div class="resultados">
+                            <h4>Componentes da velocidade</h4>
+                            <p>\(v_x = 8,192~m/s\)</p>
+                            <p>\(v_{0y} = 5,736~m/s\)</p>
+                            <h4>Resultado em x</h4>
+                            <p>\(\Delta x = 8,192t\)</p>
+                            <h4>Resultado em y</h4>
+                            <p>\(t = 1,171~s\)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="centered">
+        <span class="dot" data-number="1"></span> 
+        <span class="dot" data-number="2"></span> 
+        <span class="dot" data-number="3"></span> 
+        <span class="dot" data-number="4"></span> 
+        <span class="dot" data-number="5"></span> 
+        <span class="dot" data-number="6"></span> 
+        <span class="dot" data-number="7"></span> 
+        <span class="dot" data-number="8"></span> 
+        <span class="dot" data-number="9"></span> 
+        <span class="dot" data-number="10"></span> 
+    </div>
+    <div id="B">
+
+    </div>
+    <script src="questao1.js"></script>
+    <script src="chute.js"></script>
+</body>
+</html>

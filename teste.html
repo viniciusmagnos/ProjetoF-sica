@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="questao1.css">
+    <style>
+    select {
+
+        padding: 5px 5px;
+        border: none;
+        border-radius: 4px;
+        background-color: white;
+        color: black;
+        margin-right: 20px;
+        margin-left: 5px;
+    }
+    </style>
+</head>
+<body>
+
+<h2>The select Element</h2>
+
+
+
+
+<div class="container">
+  <select class="afirms">
+    <option value="Você selecionou verdadeiro">V</option>
+    <option value="Você selecionou falso">F</option>
+  </select>
+  <span class="choice-text">Afirmacao 1</span>
+  <span class="resposta"></span>
+  <br>
+  <select class="afirms">
+    <option value="Você selecionou verdadeiro">V</option>
+    <option value="Você selecionou falso">F</option>
+  </select>
+  <span class="choice-text">Afirmacao 2</span>
+  <span class="resposta"></span>
+  <br>
+  <select class="afirms">
+    <option value="Você selecionou verdadeiro">V</option>
+    <option value="Você selecionou falso">F</option>
+  </select>
+  <span class="choice-text">Afirmacao 3</span>
+  <span class="resposta"></span>
+  <br>
+  <select class="afirms">
+    <option value="Você selecionou verdadeiro">V</option>
+    <option value="Você selecionou falso">F</option>
+  </select>
+  <span class="choice-text">Afirmacao 4</span>
+  <span class="resposta"></span>
+</div>
+
+<div class="container centered">
+  <button class="btn" onclick="myFunction()">Enviar</button>
+</div>
+<p id="frase"></p>
+
+<script>
+function myFunction() {
+    const afirms = document.getElementsByClassName("afirms")
+    let resp = document.getElementsByClassName("resposta")
+
+    for (let i = 0; i < afirms.length ; i++)
+    {
+        resp[i].innerText = afirms[i].value;
+    }
+}
+</script>
+
+</body>
+</html>
